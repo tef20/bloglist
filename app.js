@@ -8,9 +8,10 @@ const middleware = require('./utils/middleware');
 const logger = require('./utils/logger');
 const mongoose = require('mongoose');
 
-logger.info('connecting to', config.MONGODB_URI);
+const mongoUrl = config.MONGODB_URI;
 
-const mongoUrl = process.env.MONGODB_URI;
+logger.info('connecting to', mongoUrl);
+
 mongoose
   .connect(mongoUrl)
   .then(() => {
